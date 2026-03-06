@@ -13,8 +13,10 @@ app.mount("/static", StaticFiles(directory=static_dir), name="static")
 async def root():
     return FileResponse(os.path.join(static_dir, "index.html"))
 
+PORT = int(os.environ.get("PORT", 8700))
+
 def run():
-    uvicorn.run("raddose.main:app", host="0.0.0.0", port=8700, reload=True)
+    uvicorn.run("raddose.main:app", host="0.0.0.0", port=PORT, reload=False)
 
 if __name__ == "__main__":
     run()
