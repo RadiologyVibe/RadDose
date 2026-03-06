@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raddose"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = ["fastapi", "uvicorn[standard]"]
+
+[project.scripts]
+raddose = "raddose.main:run"
+
+[tool.setuptools.packages.find]
+where = ["."]
